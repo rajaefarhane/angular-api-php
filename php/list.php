@@ -1,5 +1,6 @@
 <?php
 require 'connect.php';
+header("Access-Control-Allow-Origin: *");
 error_reporting(E_ERROR);
 $students=[];
 $sql="SELECT * FROM students";

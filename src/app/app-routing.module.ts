@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ViewComponent } from './view/view.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path:'',component:ViewComponent, pathMatch:'full'},
+  {path: 'view', component:ViewComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {StudentsService} from '../students.service';
+import {Students} from '../students';
 
 @Component({
   selector: 'app-view',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view.component.css']
 })
 export class ViewComponent implements OnInit {
+  students!: Students[];
 
-  constructor() { }
+  constructor(private _studentsServices:StudentsService) { }
 
   ngOnInit(): void {
+    this._studentsServices.getStudents().subscribe((data: Students[]) =>{
+     this.students=data;
+     console.log(this.students);
+    });
   }
 
 }

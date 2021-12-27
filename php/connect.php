@@ -1,5 +1,7 @@
 <?php
 //db credentials
+//header("Access-Control-Allow-Origin: *"); ********c'est trés important pour afficher de la bdd 
+header("Access-Control-Allow-Origin: *");
 define('DB_HOST' , 'localhost');
 define('DB_USER','root');
 define('DB_PASS','');
