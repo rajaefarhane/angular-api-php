@@ -1,1 +1,54 @@
-<p>add works!</p>
+
+<div class="container">
+<div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+        <h2 class="text-center">Add students</h2>
+        <form [formGroup]="addForm" novalidate class="form">
+            <div class="form-group" >
+                <label for="sId">Id</label>
+                <input  class="form-control" type="number" name="sId" placeholder="student id" formControlName="sId">
+            </div>
+            <!-- comment afficher erreur avec angular-->
+            <div class="alert alert-danger" *ngIf="addForm.controls['fName'].errors?.['required'] &&
+             addForm.controls['fName'].touched">
+               Please enter first Name.
+            </div>
+            <div class="form-group" >
+              <label for="fName">Student First Name:</label>
+              <input  class="form-control" type="text" name="fName" placeholder="students first name" formControlName="fName">
+           </div>
+             <!-- comment afficher erreur avec angular-->
+             <div class="alert alert-danger" *ngIf="addForm.controls['lName'].errors?.['maxlength'] &&
+           addForm.controls['lName'].touched">
+             Maximum 12 characters are allowed
+          </div>
+           <div class="alert alert-danger" *ngIf="addForm.controls['lName'].errors?.['required'] &&
+           addForm.controls['lName'].touched">
+             Please enter last Name.
+          </div>
+           <div class="form-group" >
+            <label for="lName">Student Last Name:</label>
+            <input  class="form-control" type="text" name="lName" placeholder="students last name" formControlName="lName">
+         </div>
+          <!-- comment afficher erreur avec angular-->
+          <div class="alert alert-danger" *ngIf="addForm.controls['email'].errors?.['required'] &&
+          addForm.controls['email'].touched">
+            Please enter email .
+         </div>
+          <!-- comment afficher erreur avec angular-->
+          <div class="alert alert-danger" *ngIf="addForm.controls['email'].errors?.['maxlength'] &&
+          addForm.controls['email'].touched">
+            Maximum 30 characters are allowed
+         </div>
+         <div class="form-group" >
+            <label for="email"> Email:</label>
+            <input  class="form-control" type="email" name="email" placeholder="exemple@gmail.com" formControlName="email">
+        </div>
+        <button class="btn btn-success mt-2"   (click)="onSubmit()"> Save </button>
+        <button class="btn btn-info mt-2"   > Annuler </button>
+        </form>
+    </div>
+    <div class="col-lg-4"></div>
+</div>    
+</div>
