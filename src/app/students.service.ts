@@ -10,6 +10,9 @@ export class StudentsService {
   constructor( private http:HttpClient) { }
   getStudents(){
     return this.http.get<Students[]>('http://localhost/test/teste/angularapiPhp/php/list.php');
+  };
+  deleteStudent(id:number){
+    return this.http.delete<Students[]>('http://localhost/test/teste/angularapiPhp/php/delete.php?id=' +id);
   }
 
 }

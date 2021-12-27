@@ -18,5 +18,12 @@ export class ViewComponent implements OnInit {
      console.log(this.students);
     });
   }
+  delete(students:Students):void{
+    //console.log(students.sId);
+    this._studentsServices.deleteStudent(students.id).subscribe(data =>{
+      this.students = this.students.filter(u => u !== students);
+    });
+
+  }
 
 }

@@ -15,12 +15,12 @@
                   <tbody>
                     <tr *ngFor="let std of students">
                       
-                      <td>{{std.sId}}</td>
+                      <td>{{std.id}}</td>
                       <td>{{std.fName}}</td>
                       <td>{{std.lName}}</td>
                       <td>{{std.email}}</td>
                       <td>
-                        <button style="margin: 10px"  type="button" class="btn btn-danger" >Delete</button>
+                        <button style="margin: 10px"  type="button" class="btn btn-danger" (click)="delete(std)" >Delete</button>
                         <button   type="button" class="btn btn-success" >Edit</button>
                       </td>
                     </tr>
