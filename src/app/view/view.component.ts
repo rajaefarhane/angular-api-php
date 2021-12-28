@@ -20,9 +20,13 @@ export class ViewComponent implements OnInit {
   }
   delete(students:Students):void{
     //console.log(students.sId);
-    this._studentsServices.deleteStudent(students.id).subscribe(data =>{
-      this.students = this.students.filter(u => u !== students);
-    });
+    console.log(students.sId);
+    if (confirm('Are you sure you want to delete this?')) {
+      this._studentsServices.deleteStudent(students.sId).subscribe(data =>{
+        this.students = this.students.filter(u => u !== students);
+      });
+ }
+  
 
   }
 
