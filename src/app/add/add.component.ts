@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
-
+import { StudentsService } from '../students.service';
+import { Students } from '../students';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
@@ -8,11 +10,13 @@ import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 })
 export class AddComponent implements OnInit {
 
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder,
+               private _studentService:StudentsService,
+               private router:Router) { }
   addForm!: FormGroup;
   ngOnInit(): void {
     this.addForm = this.formBuilder.group({
-      sId:[],
+   
       fName:['',Validators.required],
       lName:['',[Validators.required,Validators.maxLength(12)]],
       email:['',[Validators.required,Validators.maxLength(30)]]
@@ -20,5 +24,8 @@ export class AddComponent implements OnInit {
   }
   onSubmit(){
     console.log(this.addForm.value);
+    this._studentService.createStudent(this.addForm.value).subscribe(data =>{
+        this.router.navigate(['view']);
+      });
   }
 }

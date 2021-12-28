@@ -14,5 +14,7 @@ export class StudentsService {
   deleteStudent(id:number){
     return this.http.delete<Students[]>('http://localhost/test/teste/angularapiPhp/php/delete.php?id='+id);
   }
-
+  createStudent(student:Students){
+    return this.http.post('http://localhost/test/teste/angularapiPhp/php/insert.php',student);
+  }
 }

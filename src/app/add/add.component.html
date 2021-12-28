@@ -5,10 +5,7 @@
     <div class="col-lg-4">
         <h2 class="text-center">Add students</h2>
         <form [formGroup]="addForm" novalidate class="form">
-            <div class="form-group" >
-                <label for="sId">Id</label>
-                <input  class="form-control" type="number" name="sId" placeholder="student id" formControlName="sId">
-            </div>
+
             <!-- comment afficher erreur avec angular-->
             <div class="alert alert-danger" *ngIf="addForm.controls['fName'].errors?.['required'] &&
              addForm.controls['fName'].touched">
