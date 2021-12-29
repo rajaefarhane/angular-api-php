@@ -6,7 +6,7 @@
 <div class="row">
     <div class="col-lg-4"></div>
     <div class="col-lg-4">
-        <h2 class="text-center">Add New students</h2>
+        <h2 class="text-center">Update students</h2>
         <form [formGroup]="addForm" novalidate class="form">
 
             <!-- comment afficher erreur avec angular-->
@@ -45,7 +45,7 @@
             <label for="email"> Email:</label>
             <input  class="form-control" type="email" name="email" placeholder="exemple@gmail.com" formControlName="email">
         </div>
-        <button class="btn btn-success mt-2"   (click)="onSubmit()"> Save </button>
+        <button class="btn btn-success mt-2" (click)="update()" > Edit Student </button>
         <button class="btn btn-info mt-2"   > Annuler </button>
         </form>
     </div>

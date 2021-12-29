@@ -17,4 +17,7 @@ export class StudentsService {
   createStudent(student:Students){
     return this.http.post('http://localhost/test/teste/angularapiPhp/php/insert.php',student);
   }
+  getById(id:number){
+    return this.http.get<Students[]>('http://localhost/test/teste/angularapiPhp/php/getById.php?id=' + id);
+  }
 }

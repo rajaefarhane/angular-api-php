@@ -1,4 +1,7 @@
 <div class="container">
+  <div class="row">
+    <a routerLink="/add" class="btn btn-primary mt-4"> Add New student</a>
+  </div>
     <div class="row mt-5">
         <div class="col-lg-1"></div>
         <div class="col-lg-10">
@@ -21,13 +24,15 @@
                       <td>{{std.email}}</td>
                       <td>
                         <button style="margin: 10px"  type="button" class="btn btn-danger" (click)="delete(std)" >Delete</button>
-                        <button   type="button" class="btn btn-success" >Edit</button>
+                        <button   type="button" class="btn btn-success" (click)="edit(std)">Edit</button>
                       </td>
                     </tr>
                     
                   </tbody>
             </table>
         </div>
-        <div class="col-lg-1"></div>
+        <div class="col-lg-1">
+          
+        </div>
     </div>
 </div>
